@@ -1,0 +1,24 @@
+.Post__list{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;    
+  width:900px;
+  margin:auto auto;
+  cursor:pointer;
+}
+
+
+.Post__item{
+  width:800px;
+  height:500px;
+  cursor:pointer;
+}
+.Post__title{
+  margin:10px;
+  font-size:30px;
+  border-style:solid;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+

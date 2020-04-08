@@ -1,0 +1,38 @@
+
+.Post__Content{
+position: relative;
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;    
+  width:900px;
+  margin:auto auto;
+  cursor:pointer;
+}
+
+.Post__Title{
+display:flex;
+flex-wrap: wrap;
+margin:10px;
+}
+.Post__body{
+display:flex;
+flex-wrap: wrap;
+margin:10px;
+
+}
+.Post__button{
+  text-decoration:none;
+  border:solid 2px;
+  border-color:#1b1b2d;
+  padding:2px;
+display: flex;
+align-items: center;
+margin:auto;
+transition: all 0.5s linear;
+}
+
+.Post__button:hover {
+  border-radius: 25px;
+  transition: all 0.5s linear;    
+  border-color:#e5e5f9;
+}
