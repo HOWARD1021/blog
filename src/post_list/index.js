@@ -45,7 +45,7 @@ render(){
      onClick = {()=>{
       history.push(`/post/${post.id}#${index}`)}
     }>
-      <div className='preview'>
+      <div  >
 {imgs[index] ? <img src={imgs[index].urls.small} alt="" /> : <img src="https://reurl.cc/drDEp6" alt="" />}
        </div>
        <div className='Post__title'>
