@@ -12,6 +12,8 @@ constructor(){
 // componentDidMount : 當 component 實例 instance 建立時 並顯示在 DOM 上面 
 // setState  posts 為 json  
 componentDidMount(){
+  // 可以利用 react router 傳入的值
+  // 在render () 跑   console.log(this.props)
   const postId = this.props.match.params.postId
   fetch('https://qootest.com/posts/' + postId)
   .then(response => response.json())
@@ -20,7 +22,7 @@ componentDidMount(){
   }));
   const hash = this.props.location.hash
   const id = hash.slice(1);
-  fetch('https://api.unsplash.com/photos/?client_id=gLUTihYJ7yJzkHV1rKaXhhA65yA1ELgWvkAgkB3SQqY&per_page=30&order_by=oldest')
+  fetch('https://api.unsplash.com/photos/?client_id=gLUTihYJ7yJzkHV1rKaXhhA65yA1ELgWvkAgkB3SQqY&per_page=30&order_by=newest')
   .then(res => res.json())
   .then(
     (result) => {
@@ -33,10 +35,12 @@ componentDidMount(){
 
 render(){
   const {post,img} =this.state
+//  console.log(this.props.history)
   return(
-<div className='Post__Content'> 
+<React.Fragment > 
+    <div className='Post__Content'>
     <h1 >Post</h1>
-{img ? <img  src={img} alt="" /> : <img src="https://reurl.cc/drDEp6" alt="" />}
+{img ? <img className='article-img' src={img} alt="" /> : <img src="https://reurl.cc/drDEp6" alt="" />}
     <div className = 'Post__Title'>
     <h1 >{post.title&&img  ? post.title:'loading...'  }</h1>
     </div>
@@ -45,6 +49,7 @@ render(){
     </div>
     <Link className='Post__button' to='/post'>Back</Link>  
     </div>
+    </React.Fragment>
     )
   }
 }
